@@ -1,7 +1,7 @@
 {
-  "name": "reactboilerplate",
+  "name": "reacttodo",
   "version": "1.0.0",
-  "description": "A boilerplate for react which includes styles and tests",
+  "description": "A todo application",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
