@@ -9,6 +9,9 @@ var AddTodo = React.createClass({
       this.refs.task.value = ''
       this.props.onAddTask(task)
     }
+    else {
+      this.refs.task.focus()
+    }
 
   },
   render: function() {
@@ -16,7 +19,7 @@ var AddTodo = React.createClass({
       <div>
         <form onSubmit={this.addTask}>
           <input type="text" placeholder="Enter task" ref="task"/>
-          <button className="button">Add Task</button>
+          <button className="button expanded">Add Task</button>
         </form>
       </div>
     );
