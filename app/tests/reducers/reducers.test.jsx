@@ -18,7 +18,7 @@ describe("Reducers", () => {
     describe("showCompletedReducer", () => {
       it("should changed the status of show completed to true/false", () => {
         var action = {
-          type: "TOGGLE_SHOW_COMPELTED",
+          type: "TOGGLE_SHOW_COMPLETED",
         }
 
         var res = reducers.showCompletedReducer(df(false), df(action))
