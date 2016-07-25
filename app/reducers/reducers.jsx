@@ -50,6 +50,11 @@ export var todosReducer = (state = [],action) => {
           return item
         }
       })
+      case 'ADD_TODOS':
+        return [
+          ...state,
+          ...action.todos
+        ]
     default:
     return state
   }
