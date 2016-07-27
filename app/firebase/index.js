@@ -2,10 +2,10 @@ import firebase from 'firebase'
 
 try {
   var config = {
-    apiKey: "AIzaSyDHl5Wk9A5Wk-T5h2NFdtk6vGDcSORDh9U",
-    authDomain: "losch-todo-app.firebaseapp.com",
-    databaseURL: "https://losch-todo-app.firebaseio.com",
-    storageBucket: "losch-todo-app.appspot.com",
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET
   };
   firebase.initializeApp(config);
 } catch (e) {
