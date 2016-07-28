@@ -10,8 +10,10 @@ import router from 'app/router/'
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    store.dispatch(actions.login(user.uid))
     hashHistory.push('/todos')
   } else {
+    store.dispatch(actions.logout())
     hashHistory.push('/')
   }
 })
@@ -23,20 +25,6 @@ $(document).foundation()
 
 //App css
 require('style!css!sass!applicationStyles')
-
-var requireLogin = (nextState,replace,next) => {
-  if (!firebase.auth().currentUser) {
-    replace('/')
-  }
-  next()
-}
-
-var redirectIfLoggedIn = (nextState,replace,next) => {
-  if (firebase.auth().currentUser) {
-    replace('/todos')
-  }
-  next()
-}
 
 
 ReactDOM.render(

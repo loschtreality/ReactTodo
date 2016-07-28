@@ -16,7 +16,7 @@ describe("Reducers", () => {
     })
 
     describe("showCompletedReducer", () => {
-      it("should changed the status of show completed to true/false", () => {
+      it("should change the status of show completed to true/false", () => {
         var action = {
           type: "TOGGLE_SHOW_COMPLETED",
         }
@@ -88,6 +88,32 @@ describe("Reducers", () => {
 
       expect(res.length).toEqual(1)
       expect(res[0]).toEqual(todos[0])
+    })
+  })
+
+  describe("authReducer", () => {
+    it('should store uid on LOGIN', () => {
+      var action = {
+        type: 'LOGIN',
+        uid: '123'
+      }
+
+      var res = reducers.authReducer(df({}),df(action))
+      expect(res).toEqual({
+        uid: action.uid
+      })
+    })
+
+    it('should clear auth on LOGOUT', () => {
+      var action = {
+        type: 'LOGOUT'
+      }
+      var userObj = {
+          uid: '51223'
+      }
+
+      var res = reducers.authReducer(df(userObj),df(action))
+      expect(res).toEqual({})
     })
   })
 })
